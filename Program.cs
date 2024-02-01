@@ -1,4 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
+using Mission4;
+
 Console.WriteLine("Hello, World!");
 
 
@@ -31,6 +33,9 @@ Console.WriteLine($"Hello {userName1} and {userName2}!");
 //• Create a game board array to store the players’ choices
 // list of length 9 because the board is 3x3
 choice[] gameboard = new choice[9];
+
+
+Tools tls = new Tools();
 
 //• Ask each player in turn for their choice and update the game board array
 
