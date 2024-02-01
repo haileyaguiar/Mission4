@@ -31,12 +31,8 @@ Console.WriteLine($"Hello {userName1} and {userName2}!");
 
 //• Create a game board array to store the players’ choices
 // list of length 9 because the board is 3x3
-char[] gameboard = new char[9];
+char[,] gameboard = { {'-', '-', '-' }, { '-', '-', '-'}, { '-', '-', '-' } };
 
-for (int i = 0; i <= 9; i++)
-{
-    gameboard[i] = '⬜';
-}
 
 tools tls = new tools();
 
