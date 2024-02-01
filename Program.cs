@@ -31,18 +31,21 @@ Console.WriteLine($"Hello {userName1} and {userName2}!");
 
 //• Create a game board array to store the players’ choices
 // list of length 9 because the board is 3x3
-char[] gameboard = new char[9];
-
-for (int i = 0; i <= ; i++)
-{
-    gameboard[i] = '⬜';
-}
-
+char[,] gameboard = { {'-', '-', '-' }, { '-', '-', '-'}, { '-', '-', '-' } };
 
 tools tls = new tools();
 
 
-tls.PrintBoard();
+tls.PrintBoard(gameboard);
+
+while (tls.CheckForWinner(gameboard) != 'C')
+{
+    Console.WriteLine("What row do you want to add to?");
+    int rowIndex = int.Parse(Console.ReadLine());
+    Console.WriteLine("What row do you want to add to?");
+    int colIndex = int.Parse(Console.ReadLine());
+
+}
 
 //• Ask each player in turn for their choice and update the game board array
 
