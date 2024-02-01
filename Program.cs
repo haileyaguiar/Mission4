@@ -1,5 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using Mission4;
+using System.Runtime.InteropServices;
 Console.WriteLine("Hello, World!");
 
 
@@ -38,17 +39,36 @@ tools tls = new tools();
 
 tls.PrintBoard(gameboard);
 
-int first = 0;
+Boolean first = 0;
 while (tls.CheckForWinner(gameboard) != 'C')
 {
-    if (first == 0)
+    if (first == true)
     {
-        Console.WriteLine(userName1 + ", what row do you want to add to?");
-        int rowIndex = int.Parse(Console.ReadLine());
-        Console.WriteLine(userName1 + ", what row do you want to add to?");
-        int colIndex = int.Parse(Console.ReadLine());
+        Boolean ask = false;
+        int rowIndex = 0;
+        int colIndex = 0;
+
+        while (ask == false)
+        {
+            Console.WriteLine(userName1 + ", what row do you want to add to?");
+            rowIndex = int.Parse(Console.ReadLine());
+            Console.WriteLine(userName1 + ", what column do you want to add to?");
+            colIndex = int.Parse(Console.ReadLine());
+            if (gameboard[rowIndex - 1, colIndex - 1] == 'X')
+            {
+                Console.WriteLine("You've already placed an \'X\' there, silly!");
+            }
+            if (gameboard[rowIndex - 1, colIndex - 1] == 'O')
+            {
+                Console.WriteLine(userName2 + " already placed an \'X\' there, silly!");
+            }
+            else
+            {
+                ask = true;
+            }
+        }
         gameboard[rowIndex - 1, colIndex - 1] = 'X';
-        first = 1;
+        first = false;
     }
     else
     {
@@ -57,12 +77,14 @@ while (tls.CheckForWinner(gameboard) != 'C')
         Console.WriteLine(userName2 + ", what row do you want to add to?");
         int colIndex = int.Parse(Console.ReadLine());
         gameboard[rowIndex - 1, colIndex - 1] = 'O';
-        first = 0;
+        first = true;
     }
 
     tls.PrintBoard(gameboard);
 
 }
+
+Console.WriteLine("The Game has ended!");
 
 //• Ask each player in turn for their choice and update the game board array
 
