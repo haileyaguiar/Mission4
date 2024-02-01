@@ -34,18 +34,22 @@ namespace Mission4
                 // Check rows
                 if (receivedBoard[i, 0] != ' ' && receivedBoard[i, 0] == receivedBoard[i, 1] && receivedBoard[i, 1] == receivedBoard[i, 2])
                     return receivedBoard[i, 0];
+                Console.WriteLine(receivedBoard[i,0] + " wins!");
 
                 // Check columns
                 if (receivedBoard[0, i] != ' ' && receivedBoard[0, i] == receivedBoard[1, i] && receivedBoard[1, i] == receivedBoard[2, i])
                     return receivedBoard[0, i];
+                    Console.WriteLine(receivedBoard[0, i] + " wins!");
             }
 
             // Check diagonals
             if (receivedBoard[0, 0] != ' ' && receivedBoard[0, 0] == receivedBoard[1, 1] && receivedBoard[1, 1] == receivedBoard[2, 2])
                 return receivedBoard[0, 0];
+                Console.WriteLine(receivedBoard[0, 0] + " wins!");
 
             if (receivedBoard[0, 2] != ' ' && receivedBoard[0, 2] == receivedBoard[1, 1] && receivedBoard[1, 1] == receivedBoard[2, 0])
                 return receivedBoard[0, 2];
+                Console.WriteLine(receivedBoard[0, 2] + " wins!");
 
             // If no winner, return C for Cat's game:
             return 'C';
