@@ -42,18 +42,22 @@ tls.PrintBoard(gameboard);
 Boolean first = true;
 while (tls.CheckForWinner(gameboard) != 'C')
 {
+    // First Player goes, they're 'X'
     if (first == true)
     {
-        Boolean ask = false;
-        int rowIndex = 0;
-        int colIndex = 0;
+        Boolean ask = false; // Sees if their input is even valid
+        int rowIndex = 0; //Row index wanting to be changed
+        int colIndex = 0; //Column index wanting to be changed
 
-        while (ask == false)
+        while (ask == false) //"While a proper position hasn't been received"
         {
+            //Takes in inputs
             Console.WriteLine(userName1 + ", what row do you want to add to?");
             rowIndex = int.Parse(Console.ReadLine());
             Console.WriteLine(userName1 + ", what column do you want to add to?");
             colIndex = int.Parse(Console.ReadLine());
+
+            //Checks the values in given row
             if (gameboard[rowIndex - 1, colIndex - 1] == 'X')
             {
                 Console.WriteLine("You've already placed an \'X\' there, silly!");
@@ -62,27 +66,36 @@ while (tls.CheckForWinner(gameboard) != 'C')
             {
                 Console.WriteLine(userName2 + " already placed an \'O\' there, silly!");
             }
+            //The value was accepted
             else
             {
                 ask = true;
             }
         }
+        //Changes the value on the board
         gameboard[rowIndex - 1, colIndex - 1] = 'X';
+        //Its the second player's turn
         first = false;
 
     }
+
+    //Second Player goes, they're 'O'
     else
     {
+        
         Boolean ask = false;
         int rowIndex = 0;
         int colIndex = 0;
 
-        while (ask == false)
+        while (ask == false) //If an open spot has been selected, then you can continue
         {
+            //Received column and row indexes
             Console.WriteLine(userName2 + ", what row do you want to add to?");
             rowIndex = int.Parse(Console.ReadLine());
             Console.WriteLine(userName2 + ", what column do you want to add to?");
             colIndex = int.Parse(Console.ReadLine());
+
+            //Check the spot if it's available
             if (gameboard[rowIndex - 1, colIndex - 1] == 'X')
             {
                 Console.WriteLine(userName2 + " already placed an \'X\' there, silly!");
@@ -97,6 +110,7 @@ while (tls.CheckForWinner(gameboard) != 'C')
             }
         }
         gameboard[rowIndex - 1, colIndex - 1] = 'O';
+        //Back to the first player
         first = true;
     }
 
