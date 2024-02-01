@@ -39,7 +39,7 @@ tools tls = new tools();
 
 tls.PrintBoard(gameboard);
 
-Boolean first = 0;
+Boolean first = true;
 while (tls.CheckForWinner(gameboard) != 'C')
 {
     if (first == true)
@@ -69,6 +69,7 @@ while (tls.CheckForWinner(gameboard) != 'C')
         }
         gameboard[rowIndex - 1, colIndex - 1] = 'X';
         first = false;
+
     }
     else
     {
