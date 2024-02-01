@@ -35,7 +35,7 @@ Console.WriteLine($"Hello {userName1} and {userName2}!");
 char[] gameboard = new char[9];
 
 
-Tools tls = new Tools();
+tools tls = new tools();
 
 tls.SetBoard(gameboard);
 
