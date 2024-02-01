@@ -52,7 +52,7 @@ while (tls.CheckForWinner(gameboard) != 'C')
         {
             Console.WriteLine(userName1 + ", what row do you want to add to?");
             rowIndex = int.Parse(Console.ReadLine());
-            Console.WriteLine(userName1 + ", what row do you want to add to?");
+            Console.WriteLine(userName1 + ", what column do you want to add to?");
             colIndex = int.Parse(Console.ReadLine());
             if (gameboard[rowIndex - 1, colIndex - 1] == 'X')
             {
