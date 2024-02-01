@@ -33,7 +33,6 @@ Console.WriteLine($"Hello {userName1} and {userName2}!");
 // list of length 9 because the board is 3x3
 char[,] gameboard = { {'-', '-', '-' }, { '-', '-', '-'}, { '-', '-', '-' } };
 
-
 tools tls = new tools();
 
 
