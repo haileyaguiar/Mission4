@@ -12,12 +12,9 @@ namespace Mission4
     {
         private char[,] board;
 
-        public void SetBoard(char[,] receivedBoard)
-        {
-            board = receivedBoard;
-        }
 
-        public void PrintBoard()
+
+        public void PrintBoard(char[,] receivedBoard)
         {
             Console.WriteLine("Current Board:");
 
@@ -33,7 +30,7 @@ namespace Mission4
             Console.WriteLine();
         }
 
-        public char CheckForWinner()
+        public char CheckForWinner(char[,] receivedBoard)
         {
             for (int i = 0; i < 3; i++)
             {
