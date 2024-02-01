@@ -39,12 +39,29 @@ tools tls = new tools();
 
 tls.PrintBoard(gameboard);
 
+int first = 0;
 while (tls.CheckForWinner(gameboard) != 'C')
 {
-    Console.WriteLine("What row do you want to add to?");
-    int rowIndex = int.Parse(Console.ReadLine());
-    Console.WriteLine("What row do you want to add to?");
-    int colIndex = int.Parse(Console.ReadLine());
+    if (first == 0)
+    {
+        Console.WriteLine(userName1 + ", what row do you want to add to?");
+        int rowIndex = int.Parse(Console.ReadLine());
+        Console.WriteLine(userName1 + ", what row do you want to add to?");
+        int colIndex = int.Parse(Console.ReadLine());
+        gameboard[rowIndex - 1, colIndex - 1] = 'X';
+        first = 1;
+    }
+    else
+    {
+        Console.WriteLine(userName2 + ", what row do you want to add to?");
+        int rowIndex = int.Parse(Console.ReadLine());
+        Console.WriteLine(userName2 + ", what row do you want to add to?");
+        int colIndex = int.Parse(Console.ReadLine());
+        gameboard[rowIndex - 1, colIndex - 1] = 'O';
+        first = 0;
+    }
+
+    tls.PrintBoard(gameboard);
 
 }
 
