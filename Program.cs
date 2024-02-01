@@ -39,10 +39,8 @@ for (int i = 0; i <= ; i++)
 }
 
 
-
 tools tls = new tools();
 
-tls.SetBoard(gameboard);
 
 tls.PrintBoard();
 
