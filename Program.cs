@@ -32,10 +32,14 @@ Console.WriteLine($"Hello {userName1} and {userName2}!");
 
 //• Create a game board array to store the players’ choices
 // list of length 9 because the board is 3x3
-choice[] gameboard = new choice[9];
+char[] gameboard = new char[9];
 
 
 Tools tls = new Tools();
+
+tls.SetBoard(gameboard);
+
+tls.printBoard();
 
 //• Ask each player in turn for their choice and update the game board array
 
