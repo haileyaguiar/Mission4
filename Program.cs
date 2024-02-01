@@ -33,18 +33,15 @@ Console.WriteLine($"Hello {userName1} and {userName2}!");
 // list of length 9 because the board is 3x3
 char[] gameboard = new char[9];
 
-for (int i = 0; i <= ; i++)
+for (int i = 0; i <= 9; i++)
 {
     gameboard[i] = '⬜';
 }
 
-
-
 tools tls = new tools();
 
-tls.SetBoard(gameboard);
 
-tls.PrintBoard();
+tls.PrintBoard(gameboard);
 
 //• Ask each player in turn for their choice and update the game board array
 
