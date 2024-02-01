@@ -39,6 +39,15 @@ tools tls = new tools();
 
 tls.PrintBoard(gameboard);
 
+while (tls.CheckForWinner(gameboard) != 'C')
+{
+    Console.WriteLine("What row do you want to add to?");
+    int rowIndex = int.Parse(Console.ReadLine());
+    Console.WriteLine("What row do you want to add to?");
+    int colIndex = int.Parse(Console.ReadLine());
+
+}
+
 //• Ask each player in turn for their choice and update the game board array
 
 //public void SetBoard(char[,] receivedBoard)
