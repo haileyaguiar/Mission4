@@ -13,7 +13,7 @@ namespace Mission4
 
         public void PrintBoard(char[,] receivedBoard)
         {
-            Console.WriteLine("Current Board:");
+            Console.WriteLine("\nCurrent Board:");
 
             for (int i = 0; i < 3; i++)
             {
