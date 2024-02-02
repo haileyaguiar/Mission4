@@ -32,7 +32,7 @@ namespace Mission4
             for (int i = 0; i < 3; i++)
             {
                 // Check rows
-                if ((receivedBoard[i, 0] == receivedBoard[i, 1] && receivedBoard[i, 1] == receivedBoard[i, 2])
+                if (receivedBoard[i, 0] == receivedBoard[i, 1] && receivedBoard[i, 1] == receivedBoard[i, 2])
                     {
                         if (receivedBoard[i,0] == 'X')
                         {
