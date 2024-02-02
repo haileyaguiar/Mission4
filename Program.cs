@@ -1,7 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using Mission4;
 using System.Runtime.InteropServices;
-Console.WriteLine("Hello, World!");
+Console.WriteLine("⭕ Welcome to Tic-Tac-Toe! ❌\n");
 
 
 //The “Driver” class (the Program.cs class with the main method where the program begins)
@@ -122,7 +122,7 @@ while (1 != 0)
         //Back to the first player
         first = true;
     }
-
+    //Checks each time the board has been made if there is a 3-in-a-row
     tls.PrintBoard(gameboard);
     if (tls.CheckForWinner(gameboard) == 'X')
     {
@@ -145,17 +145,8 @@ while (1 != 0)
     }
 }
 
-
-
-
+//Breaks free from the loop and the game has ended!
 Console.WriteLine("The Game has ended!");
-
-//• Ask each player in turn for their choice and update the game board array
-
-//public void SetBoard(char[,] receivedBoard)
-//public void PrintBoard()
-//public char CheckForWinner()
-
 
 
 

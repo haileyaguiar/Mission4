@@ -11,7 +11,7 @@ namespace Mission4
     internal class tools
     {
 
-        public void PrintBoard(char[,] receivedBoard)
+        public void PrintBoard(char[,] receivedBoard) // Prints the board
         {
             Console.WriteLine("\nCurrent Board:");
 
@@ -27,7 +27,7 @@ namespace Mission4
             Console.WriteLine();
         }
 
-        public char CheckForWinner(char[,] receivedBoard)
+        public char CheckForWinner(char[,] receivedBoard) //Checks to see if there are any three in a row
         {
             int tieCounter = 0;
             for (int i = 0; i < 3; i++)
@@ -75,9 +75,9 @@ namespace Mission4
                     return 'O';
                 }
             }
-                
-               
 
+
+            // Check diagonals
             if ((receivedBoard[0, 2] == receivedBoard[1, 1]) && (receivedBoard[1, 1] == receivedBoard[2, 0]))
             {
                 if (receivedBoard[0, 2] == 'X')
@@ -113,6 +113,7 @@ namespace Mission4
                     }
                 }
             }
+            //Neutral Return
             return 'N';
         }
 
