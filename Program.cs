@@ -40,7 +40,7 @@ tools tls = new tools();
 tls.PrintBoard(gameboard);
 
 Boolean first = true;
-while (tls.CheckForWinner(gameboard) != 'X' || tls.CheckForWinner(gameboard) != 'O' || tls.CheckForWinner(gameboard) != 'C')
+while (1 != 0)
 {
     // First Player goes, they're 'X'
     if (first == true)
@@ -124,21 +124,29 @@ while (tls.CheckForWinner(gameboard) != 'X' || tls.CheckForWinner(gameboard) != 
     }
 
     tls.PrintBoard(gameboard);
-
+    if (tls.CheckForWinner(gameboard) == 'X')
+    {
+        Console.WriteLine(userName1 + " has won!");
+        break;
+    }
+    if (tls.CheckForWinner(gameboard) == 'O')
+    {
+        Console.WriteLine(userName2 + " has won!");
+        break;
+    }
+    if (tls.CheckForWinner(gameboard) == 'C')
+    {
+        Console.WriteLine("It's a tie!");
+        break;
+    }
+    else
+    {
+        continue;
+    }
 }
 
-if (tls.CheckForWinner(gameboard) == 'X')
-{
-    Console.WriteLine(userName1 + " has won!");
-}
-if (tls.CheckForWinner(gameboard) == 'O')
-{
-    Console.WriteLine(userName2 + " has won!");
-}
-if (tls.CheckForWinner(gameboard) == 'C')
-{
-    Console.WriteLine("It's a tie!");
-}
+
+
 
 Console.WriteLine("The Game has ended!");
 

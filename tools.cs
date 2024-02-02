@@ -29,6 +29,7 @@ namespace Mission4
 
         public char CheckForWinner(char[,] receivedBoard)
         {
+            int tieCounter = 0;
             for (int i = 0; i < 3; i++)
             {
                 // Check rows
@@ -88,11 +89,32 @@ namespace Mission4
                     return 'O';
                 }
             }
-             
 
             // If no winner, return C for Cat's game:
-
-            return 'C';
+            for (int i = 0; i <= 3; i++)
+            {
+                for (int j = 0; j <= 3; j++)
+                {
+                    if ((receivedBoard[i, j]) != '-')
+                    {
+                        tieCounter++;
+                        if (tieCounter == 9)
+                        {
+                            return 'C';
+                        }
+                    }
+                    if ((receivedBoard[i, j]) == (receivedBoard[2, 2]))
+                    {
+                        tieCounter = 0;
+                    }
+                    else
+                    {
+                        tieCounter = 0;
+                    }
+                }
+            }
+            return 'N';
         }
+
     }
 }
