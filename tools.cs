@@ -32,23 +32,62 @@ namespace Mission4
             for (int i = 0; i < 3; i++)
             {
                 // Check rows
-                if (receivedBoard[i, 0] != '-' && receivedBoard[i, 0] == receivedBoard[i, 1] && receivedBoard[i, 1] == receivedBoard[i, 2])
-                    return receivedBoard[i, 0];
+                if ((receivedBoard[i, 0] == receivedBoard[i, 1] && receivedBoard[i, 1] == receivedBoard[i, 2])
+                    {
+                        if (receivedBoard[i,0] == 'X')
+                        {
+                            return 'X';
+                        }
+                        if (receivedBoard[i,0] == 'O')
+                        {
+                            return 'O';
+                        }
+                    }
+                    //return receivedBoard[i, 0];
+                    
                 
 
                 // Check columns
-                if (receivedBoard[0, i] != '-' && receivedBoard[0, i] == receivedBoard[1, i] && receivedBoard[1, i] == receivedBoard[2, i])
-                    return receivedBoard[0, i];
+                if (receivedBoard[0, i] == receivedBoard[1, i] && receivedBoard[1, i] == receivedBoard[2, i])
+                {
+                        if (receivedBoard[i,0] == 'X')
+                        {
+                            return 'X';
+                        }
+                        if (receivedBoard[i,0] == 'O')
+                        {
+                            return 'O';
+                        }
+                }
                 
             }
 
             // Check diagonals
-            if (receivedBoard[0, 0] != '-' && receivedBoard[0, 0] == receivedBoard[1, 1] && receivedBoard[1, 1] == receivedBoard[2, 2])
-                return receivedBoard[0, 0];
+            if (receivedBoard[0, 0] == receivedBoard[1, 1] && receivedBoard[1, 1] == receivedBoard[2, 2])
+            {
+                if (receivedBoard[0, 0] == 'X')
+                {
+                    return 'X';
+                }
+                if (receivedBoard[0, 0] == 'O')
+                {
+                    return 'O';
+                }
+            }
+                
                
 
-            if (receivedBoard[0, 2] != '-' && receivedBoard[0, 2] == receivedBoard[1, 1] && receivedBoard[1, 1] == receivedBoard[2, 0])
-                return receivedBoard[0, 2];
+            if (receivedBoard[0, 2] == receivedBoard[1, 1] && receivedBoard[1, 1] == receivedBoard[2, 0])
+            {
+                if (receivedBoard[0, 2] == 'X')
+                {
+                    return 'X';
+                }
+                if (receivedBoard[0, 2] == 'O')
+                {
+                    return 'O';
+                }
+            }
              
 
             // If no winner, return C for Cat's game:
