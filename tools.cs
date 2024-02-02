@@ -33,7 +33,7 @@ namespace Mission4
             for (int i = 0; i < 3; i++)
             {
                 // Check rows
-                if (receivedBoard[i, 0] == receivedBoard[i, 1] && receivedBoard[i, 1] == receivedBoard[i, 2])
+                if ((receivedBoard[i, 0] == receivedBoard[i, 1]) && (receivedBoard[i, 0] == receivedBoard[i, 2]))
                     {
                         if (receivedBoard[i,0] == 'X')
                         {
@@ -49,7 +49,7 @@ namespace Mission4
                 
 
                 // Check columns
-                if (receivedBoard[0, i] == receivedBoard[1, i] && receivedBoard[1, i] == receivedBoard[2, i])
+                if ((receivedBoard[0, i] == receivedBoard[1, i]) && (receivedBoard[0, i] == receivedBoard[2, i]))
                 {
                         if (receivedBoard[i,0] == 'X')
                         {
@@ -91,9 +91,9 @@ namespace Mission4
             }
 
             // If no winner, return C for Cat's game:
-            for (int i = 0; i <= 3; i++)
+            for (int i = 0; i <= 2; i++)
             {
-                for (int j = 0; j <= 3; j++)
+                for (int j = 0; j <= 2; j++)
                 {
                     if ((receivedBoard[i, j]) != '-')
                     {
