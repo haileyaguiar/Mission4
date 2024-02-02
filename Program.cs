@@ -62,15 +62,19 @@ while (tls.CheckForWinner(gameboard) != 'X' || tls.CheckForWinner(gameboard) != 
             {
                 Console.WriteLine("You've already placed an \'X\' there, silly!");
             }
-            if (gameboard[rowIndex - 1, colIndex - 1] == 'O')
+            else 
             {
-                Console.WriteLine(userName2 + " already placed an \'O\' there, silly!");
+                if (gameboard[rowIndex - 1, colIndex - 1] == 'O')
+                {
+                    Console.WriteLine(userName2 + " already placed an \'O\' there, silly!");
+                }
+                //The value was accepted
+                else
+                {
+                    ask = true;
+                }
             }
-            //The value was accepted
-            else
-            {
-                ask = true;
-            }
+
         }
         //Changes the value on the board
         gameboard[rowIndex - 1, colIndex - 1] = 'X';
@@ -98,16 +102,21 @@ while (tls.CheckForWinner(gameboard) != 'X' || tls.CheckForWinner(gameboard) != 
             //Check the spot if it's available
             if (gameboard[rowIndex - 1, colIndex - 1] == 'X')
             {
-                Console.WriteLine(userName2 + " already placed an \'X\' there, silly!");
+                Console.WriteLine(userName1 + " already placed an \'X\' there, silly!");
             }
-            if (gameboard[rowIndex - 1, colIndex - 1] == 'O')
+            else 
             {
-                Console.WriteLine("You've already placed an \'O\' there, silly!");
+                if (gameboard[rowIndex - 1, colIndex - 1] == 'O')
+                {
+                    Console.WriteLine("You've already placed an \'O\' there, silly!");
+                }
+                else
+                {
+                    ask = true;
+                }
             }
-            else
-            {
-                ask = true;
-            }
+
+
         }
         gameboard[rowIndex - 1, colIndex - 1] = 'O';
         //Back to the first player
