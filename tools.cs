@@ -51,11 +51,11 @@ namespace Mission4
                 // Check columns
                 if ((receivedBoard[0, i] == receivedBoard[1, i]) && (receivedBoard[0, i] == receivedBoard[2, i]))
                 {
-                        if (receivedBoard[i,0] == 'X')
+                        if (receivedBoard[0, i] == 'X')
                         {
                             return 'X';
                         }
-                        if (receivedBoard[i,0] == 'O')
+                        if (receivedBoard[0, i] == 'O')
                         {
                             return 'O';
                         }
@@ -64,7 +64,7 @@ namespace Mission4
             }
 
             // Check diagonals
-            if (receivedBoard[0, 0] == receivedBoard[1, 1] && receivedBoard[1, 1] == receivedBoard[2, 2])
+            if ((receivedBoard[0, 0] == receivedBoard[1, 1]) && (receivedBoard[1, 1] == receivedBoard[2, 2]))
             {
                 if (receivedBoard[0, 0] == 'X')
                 {
@@ -78,7 +78,7 @@ namespace Mission4
                 
                
 
-            if (receivedBoard[0, 2] == receivedBoard[1, 1] && receivedBoard[1, 1] == receivedBoard[2, 0])
+            if ((receivedBoard[0, 2] == receivedBoard[1, 1]) && (receivedBoard[1, 1] == receivedBoard[2, 0]))
             {
                 if (receivedBoard[0, 2] == 'X')
                 {
